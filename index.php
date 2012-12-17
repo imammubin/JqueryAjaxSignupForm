@@ -21,7 +21,7 @@
                 $("#username").keyUp(function(){
                     var username=$("#username").val();
                     $.post("cekUsername.php",dataString,function(data){
-                        if(data)=="ok"{
+                        if(data=="ok"){
                             $("#cekUsername").html("ok");
                         }else{
                             $("#cekUsername").html("try another username");
@@ -52,7 +52,7 @@
                 $("#submit").click(function(){
                     var dataString=$("#signupForm").serialize();
                     $.post("signupProses.php",dataString,function(data){
-                        if(data)=="ok"{
+                        if(data=="ok"){
                             $("#result").html("signup succes, please check your email..");
                         }else{
                             $("#result").html("signup fail..");
