@@ -26,8 +26,8 @@
                         }else{
                             $("#result").html("signup fail..");
                         }
-                    })
-                })
+                    });
+                });
         
             });
         </script>
