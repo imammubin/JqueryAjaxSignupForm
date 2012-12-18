@@ -49,6 +49,14 @@
                         }
                  });
 
+                $("#email").keyUp(function(){
+                        if(isValidEmail($("#email").val())"{
+                            $("#cekEmail").html("ok);
+                        }else{
+                            $("#cekEmail").html("invalid email addres");
+                        }
+                 });
+
                 $("#submit").click(function(){
                     var dataString=$("#signupForm").serialize();
                     $.post("signupProses.php",dataString,function(data){
@@ -61,6 +69,16 @@
                 });
 
             });
+            
+            function isValidEmail(email){ 
+                var RegExp = /^((([a-z]|[0-9]|!|#|$|%|&|'|\*|\+|\-|\/|=|\?|\^|_|`|\{|\||\}|~)+(\.([a-z]|[0-9]|!|#|$|%|&|'|\*|\+|\-|\/|=|\?|\^|_|`|\{|\||\}|~)+)*)@((((([a-z]|[0-9])([a-z]|[0-9]|\-){0,61}([a-z]|[0-9])\.))*([a-z]|[0-9])([a-z]|[0-9]|\-){0,61}([a-z]|[0-9])\.)[\w]{2,4}|(((([0-9]){1,3}\.){3}([0-9]){1,3}))|(\[((([0-9]){1,3}\.){3}([0-9]){1,3})\])))$/ 
+                if(RegExp.test(email)){ 
+                    return "ok"; 
+                }else{ 
+                    return false; 
+                } 
+            } 
+
         </script>
         
         <div id="footer"> from: <a href="http://imammubin.com">http://imammubin.com</a></div>
