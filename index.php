@@ -31,7 +31,7 @@
 
                 $("#password").keyUp(function(){
                     var lenPW=$("#password").val();
-                        if(lenPW>5)"{
+                        if(lenPW>5){
                             $("#cekPassword").html("ok");
                         }else{
                             $("#cekPassword").html("Password must be in 6 character");
@@ -50,8 +50,8 @@
                  });
 
                 $("#email").keyUp(function(){
-                        if(isValidEmail($("#email").val()){
-                            $("#cekEmail").html("ok");
+                        if(isValidEmail($("#email").val())"{
+                            $("#cekEmail").html("ok);
                         }else{
                             $("#cekEmail").html("invalid email addres");
                         }
