@@ -42,16 +42,16 @@
                 $("#password2").keyUp(function(){
                     var password=$("#password").val();
                     var password2=$("#password2").val();
-                        if(password==password2)"{
-                            $("#cekPassword2").html("ok);
+                        if(password==password2){
+                            $("#cekPassword2").html("ok");
                         }else{
                             $("#cekPassword2").html("Password not same");
                         }
                  });
 
                 $("#email").keyUp(function(){
-                        if(isValidEmail($("#email").val())"{
-                            $("#cekEmail").html("ok);
+                        if(isValidEmail($("#email").val()){
+                            $("#cekEmail").html("ok");
                         }else{
                             $("#cekEmail").html("invalid email addres");
                         }
