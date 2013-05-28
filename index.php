@@ -50,8 +50,8 @@
                  });
 
                 $("#email").keyUp(function(){
-                        if(isValidEmail($("#email").val())"{
-                            $("#cekEmail").html("ok);
+                        if(isValidEmail($("#email").val()){
+                            $("#cekEmail").html("ok");
                         }else{
                             $("#cekEmail").html("invalid email addres");
                         }
