@@ -6,7 +6,7 @@
     <body>
         <h1> Signup Form </h1>
         
-        <form name="signupForm" id="signupForm">
+        <form name="signupForm" id="signupForm" method="post">
             <input type="text" id="username" name="username" value=""> <div id="cekUsername"></div>
             <input type="text" id="password" name="password" value=""> <div id="cekPassword"></div>
             <input type="text" id="password2" name="password2" value=""> <div id="cekPassword2"></div>
@@ -16,18 +16,16 @@
         <div id="result"></div>
         
         <script type="text/javascript">
-            $(document).ready(function(){
           
-                $("#username").keyUp(function(){
-                    var username=$("#username").val();
-                    $.post("cekUsername.php",dataString,function(data){
-                        if(data=="ok"){
-                            $("#cekUsername").html("ok");
+                 $("#password").keyup(function(){
+    			 	var valPW=$("#password").val();
+                    var lenPW=valPW.length;
+                        if(lenPW>5){
+                            $("#cekPassword").html("ok");
                         }else{
-                            $("#cekUsername").html("try another username");
+                            $("#cekPassword").html("Password must be in 6 character");
                         }
-                    });
-                });
+                 });
 
                 $("#password").keyUp(function(){
                     var lenPW=$("#password").val();
@@ -66,9 +64,9 @@
                             $("#result").html("signup fail..");
                         }
                     });
+    				alert();
                 });
 
-            });
             
             function isValidEmail(email){ 
                 var RegExp = /^((([a-z]|[0-9]|!|#|$|%|&|'|\*|\+|\-|\/|=|\?|\^|_|`|\{|\||\}|~)+(\.([a-z]|[0-9]|!|#|$|%|&|'|\*|\+|\-|\/|=|\?|\^|_|`|\{|\||\}|~)+)*)@((((([a-z]|[0-9])([a-z]|[0-9]|\-){0,61}([a-z]|[0-9])\.))*([a-z]|[0-9])([a-z]|[0-9]|\-){0,61}([a-z]|[0-9])\.)[\w]{2,4}|(((([0-9]){1,3}\.){3}([0-9]){1,3}))|(\[((([0-9]){1,3}\.){3}([0-9]){1,3})\])))$/ 
