@@ -1,11 +1,11 @@
+<!DOCTYPE html>
 <html>
     <head> 
         <title> Jquery Ajax Signup Form | www.imammubin.com </title>
-        <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <script type="text/javascript" src="http://www.imammubin.com/config/js/jquery.min.js"></script>
     </head>
     <body>
-        <h1> Signup Form </h1>
-        
+        <h1> Signup Form </h1>        
         <form name="signupForm" id="signupForm" method="post">
             <input type="text" id="username" name="username" value=""> <div id="cekUsername"></div>
             <input type="text" id="password" name="password" value=""> <div id="cekPassword"></div>
@@ -26,18 +26,7 @@
                             $("#cekPassword").html("Password must be in 6 character");
                         }
                  });
-
-                $("#password").keyUp(function(){
-                    var lenPW=$("#password").val();
-                        if(lenPW>5){
-                            $("#cekPassword").html("ok");
-                        }else{
-                            $("#cekPassword").html("Password must be in 6 character");
-                        }
-                 });
-
-
-                $("#password2").keyUp(function(){
+                $("#password2").keyup(function(){
                     var password=$("#password").val();
                     var password2=$("#password2").val();
                         if(password==password2){
@@ -47,35 +36,23 @@
                         }
                  });
 
-                $("#email").keyUp(function(){
-                        if(isValidEmail($("#email").val()){
-                            $("#cekEmail").html("ok");
-                        }else{
-                            $("#cekEmail").html("invalid email addres");
-                        }
-                 });
+               $("#email").keyup(function(){
+					var email=$("#email").val();
+                  });
 
                 $("#submit").click(function(){
-                    var dataString=$("#signupForm").serialize();
+                     var dataString=$("#signupForm").serialize();
                     $.post("signupProses.php",dataString,function(data){
-                        if(data=="ok"){
+                        alert(data);
+						if(data=="ok"){
                             $("#result").html("signup succes, please check your email..");
                         }else{
                             $("#result").html("signup fail..");
                         }
                     });
-    				alert();
-                });
-
-            
-            function isValidEmail(email){ 
-                var RegExp = /^((([a-z]|[0-9]|!|#|$|%|&|'|\*|\+|\-|\/|=|\?|\^|_|`|\{|\||\}|~)+(\.([a-z]|[0-9]|!|#|$|%|&|'|\*|\+|\-|\/|=|\?|\^|_|`|\{|\||\}|~)+)*)@((((([a-z]|[0-9])([a-z]|[0-9]|\-){0,61}([a-z]|[0-9])\.))*([a-z]|[0-9])([a-z]|[0-9]|\-){0,61}([a-z]|[0-9])\.)[\w]{2,4}|(((([0-9]){1,3}\.){3}([0-9]){1,3}))|(\[((([0-9]){1,3}\.){3}([0-9]){1,3})\])))$/ 
-                if(RegExp.test(email)){ 
-                    return "ok"; 
-                }else{ 
-                    return false; 
-                } 
-            } 
+ 					return false;
+                 });        
+				 
 
         </script>
         
